@@ -4,13 +4,13 @@ import { Observable } from "rxjs/RX";
 import { CategoriaDTO } from "../../models/categoria.DTO";
 import { API_CONFIG } from "../../config/api.config";
 
-Injectable
-export class categoriaService{
+@Injectable()
+export class CategoriaService{
 
     constructor(public http: HttpClient){
     }
 
     public findAll(): Observable<CategoriaDTO[]>{
-        return this.http.get<CategoriaDTO[]>(`$(API_CONFIG.baseUrl)/categorias`);
+        return this.http.get<CategoriaDTO[]>(`${API_CONFIG.baseUrl}/categorias`);
     }
 }
